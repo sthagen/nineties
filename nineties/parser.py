@@ -2,8 +2,11 @@
 """Parsers for issues from the Nineties."""
 import datetime as dti
 import operator
+from typing import Tuple
 
 ISO_FMT = "%Y-%m-%dT%H:%M:%S.%f"
+ISO_LENGTH = len("YYYY-mm-ddTHH:MM:SS.fff")
+TZ_OP = {"+": operator.sub, "-": operator.add}  # + indicates ahead of UTC
 
 JR_NULL = "<null>"
 NA = "n/a"
@@ -11,6 +14,11 @@ NA = "n/a"
 START_DATA, END_DATA = "[", "]"
 REC_SEP, KV_SEP = ",", "="
 FINAL_DSL_KEY = "final"
+
+
+def split_at(text_fragment: str, pos: int) -> Tuple:
+    """Split text fragment by position and return pair as tuple."""
+    return text_fragment[:pos], text_fragment[pos:]
 
 
 def parse_timestamp(text_stamp):
@@ -22,27 +30,20 @@ def parse_timestamp(text_stamp):
     if text_stamp is None or text_stamp == JR_NULL:
         return None
 
-    iso8601_length = len("YYYY-mm-ddTHH:MM:SS.fff")
-    assert len(text_stamp) > iso8601_length
-
-    iso_value, offset = text_stamp[:iso8601_length], text_stamp[iso8601_length:]
-
+    iso_value, off = split_at(text_stamp, ISO_LENGTH)
     local_time = dti.datetime.strptime(iso_value, ISO_FMT)
+    if not off:
+        return local_time
 
-    oper = {"+": operator.sub, "-": operator.add}  # + indicates ahead of UTC
     sign_pos = 0
-    assert offset and offset[sign_pos] in oper
+    assert off and off[sign_pos] in TZ_OP
 
-    m_start = 3 if ":" not in offset else 4
-    assert len(offset) == m_start + 2
+    m_start = 3 if ":" not in off else 4
+    assert len(off) == m_start + 2
 
-    direction, hours, minutes = (
-        offset[sign_pos],
-        int(offset[1:3]),
-        int(offset[m_start:]),
-    )
+    oper, hours, minutes = off[sign_pos], int(off[1:3]), int(off[m_start:])
 
-    return oper[direction](local_time, dti.timedelta(hours=hours, minutes=minutes))
+    return TZ_OP[oper](local_time, dti.timedelta(hours=hours, minutes=minutes))
 
 
 def split_kv(text_pair, sep):

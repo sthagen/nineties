@@ -28,6 +28,12 @@ def test_parse_timestamp_ok_future_iso_cest():
     assert p.parse_timestamp(VALID_FUTURE_ISO_CEST_COLON) == then
 
 
+def test_parse_timestamp_ok_future_iso_implicit_utc():
+    then = VALID_FUTURE_DT_UTC_FROM_UTC
+    assert p.parse_timestamp(VALID_FUTURE_ISO) == then
+    assert p.parse_timestamp(VALID_FUTURE_ISO + "+00:00") == then
+
+
 def test_parse_timestamp_ok_future_iso_utc():
     then = VALID_FUTURE_DT_UTC_FROM_UTC
     assert p.parse_timestamp(VALID_FUTURE_ISO + "+0000") == then
@@ -37,7 +43,7 @@ def test_parse_timestamp_ok_future_iso_utc():
 
 
 def test_parse_timestamp_nok_outer_length():
-    with pytest.raises(AssertionError):
+    with pytest.raises(ValueError):
         p.parse_timestamp("" * 23)
 
 
