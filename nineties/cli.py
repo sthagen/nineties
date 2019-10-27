@@ -15,9 +15,9 @@ except ImportError as err:
 import nineties.parser as p90
 import nineties.privacy as priv
 
-# Below due to merge of dict 3.5+ dataclasses 3.7+
-if tuple(sys.version_info) < (3, 7):
-    raise RuntimeError("python version 3.7 or higher required (data classes)")
+# Below to profit from insert ordering of dicts in 3.6+
+if tuple(sys.version_info) < (3, 6):
+    raise RuntimeError("python version 3.6 or higher required (better dicts)")
 
 
 FAKE = Faker()
