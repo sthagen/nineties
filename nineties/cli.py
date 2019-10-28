@@ -35,8 +35,9 @@ def parse(json_text, process_with):
     return record
 
 
-def main(argv):
+def main(argv=None):
     """Drive the understanding ..."""
+    argv = sys.argv if argv is None else argv
     parser_map = {
         "dsl": p90.parse_dsl_entry,
         "timestamp": p90.parse_timestamp,
@@ -49,7 +50,7 @@ def main(argv):
             data = parse(all_text, parser_map)
         else:
             if p90.START_DATA in text_or_file:
-                data = p90.parse_dsl_entry(text_or_file)
+                data = parse(text_or_file, parser_map)
             else:
                 data = {"error": text_or_file}
 

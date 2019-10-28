@@ -17,7 +17,7 @@ from faker import Faker
 NAME, EMAIL, TEXT = "name", "email", "text"
 ASPECTS = NAME, EMAIL, TEXT
 EMPTY_ALIASES = {k: {} for k in ASPECTS}
-ALIASES_ENV = "90S_ALIASES"
+ALIASES_ENV = "ALIASES_90S"
 ALIASES = os.getenv(ALIASES_ENV, EMPTY_ALIASES)
 
 if ALIASES != EMPTY_ALIASES:

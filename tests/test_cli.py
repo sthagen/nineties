@@ -43,24 +43,24 @@ def test_import_guards():
 
 
 def test_cli_main_ok():
-    argv = ["ignored", '"a[c=d,date=2019-12-12T12:12:12.123+0200,final=f]"']
+    argv = ["ignored", '{"dsl": "a[c=d,date=2019-12-12T12:12:12.123+0200,final=f]"}']
     assert cli.main(argv) is None
 
 
 def test_cli_main_ok_id():
-    argv = ["ignored", '"a[c=d,id=2019,final=f]"']
+    argv = ["ignored", '{"dsl": "a[c=d,id=2019,final=f]"}']
     assert cli.main(argv) is None
 
 
 def test_cli_main_ok_timestamp():
-    argv = ["ignored", "2019-12-12T12:12:12.121+0200"]
+    argv = ["ignored", '{"timestamp": "2019-12-12T12:12:12.121+0200"}']
     assert cli.main(argv) is None
 
 
 def test_cli_main_nok():
     argv = ["ignored", '"a[c=d,not_final=do_not_care]"']
-    message = r"not enough values to unpack \(expected 2, got 1\)"
-    with pytest.raises(ValueError, match=message):
+    message = r"'str' object has no attribute 'items'"
+    with pytest.raises(AttributeError, match=message):
         cli.main(argv)
 
 
