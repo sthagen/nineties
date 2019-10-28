@@ -33,14 +33,6 @@ def teardown():
         os.environ[ALIASES_ENV] = ALIASES_ENV_VALUE
 
 
-def test_privacy_expose_aliases_ok_unset():
-    if ALIASES_ENV_VALUE is not None:
-        os.environ[ALIASES_ENV] = ''  # pragma: no cover
-    message = r"Expecting value: line 1 column 1 \(char 0\)"
-    with pytest.raises(json.decoder.JSONDecodeError, match=message):
-        importlib.reload(priv)
-
-
 def test_privacy_expose_aliases_ok_set_empty():
     os.environ[ALIASES_ENV] = ''
     message = r"Expecting value: line 1 column 1 \(char 0\)"
