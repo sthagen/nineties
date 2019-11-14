@@ -197,6 +197,98 @@ def test_parser_split_kv_ok():
 
 
 def test_parser_split_kv_nok():
-    message = r"must be str or None, not int"
+    assert p.split_kv("", 42) == (None, "")
+
+
+def test_parser_split_issue_key_ok():
+    text_key = "BAZ-42"
+    assert p.split_issue_key(text_key) == ("BAZ", 42)
+
+
+def test_parser_split_issue_key_ok_negative():
+    text_key = "BAZ--42"
+    assert p.split_issue_key(text_key) == ("BAZ", -42)
+
+
+def test_parser_split_issue_key_nok_wrong_sep():
+    text_key = "BAZ_42"
+    message = text_key + r" is not a valid issue key composed of project and serial"
+    with pytest.raises(ValueError, match=message):
+        assert p.split_issue_key(text_key)
+
+
+def test_parser_split_issue_key_nok_no_serial():
+    no_serial = "Bar"
+    text_key = "Foo-" + no_serial
+    message = r"invalid literal for int\(\) with base 10: '" + no_serial + "'"
+    with pytest.raises(ValueError, match=message):
+        assert p.split_issue_key(text_key)
+
+
+def test_parser_sorted_issue_keys_ok():
+    text_keys = ("BAZ-42", "BAR-999", "BAZ-41", "A-1")
+    sorted_keys = ("A-1", "BAR-999", "BAZ-41", "BAZ-42")
+    assert tuple(p.sorted_issue_keys_gen(text_keys)) == sorted_keys
+
+
+def test_parser_sorted_issue_keys_ok_corner_min():
+    text_keys = ("BAZ-42",)
+    sorted_keys = text_keys
+    assert tuple(p.sorted_issue_keys_gen(text_keys)) == sorted_keys
+
+
+def test_parser_sorted_issue_keys_ok_empty():
+    text_keys = tuple()
+    sorted_keys = text_keys
+    assert tuple(p.sorted_issue_keys_gen(text_keys)) == sorted_keys
+
+
+def test_parser_sorted_issue_keys_ok_empty_string():
+    text_keys = ""
+    sorted_keys = tuple()
+    assert tuple(p.sorted_issue_keys_gen(text_keys)) == sorted_keys
+
+
+def test_parser_sorted_issue_keys_nok_non_iterable():
+    data = 42
+    message = r"'int' object is not iterable"
     with pytest.raises(TypeError, match=message):
-        assert p.split_kv("", 42)
+        tuple(p.sorted_issue_keys_gen(data))
+
+
+def test_parser_most_common_issue_projects_ok():
+    text_keys = ("BAZ-42", "BAR-999", "BAZ-41", "A-1")
+    most_common = [("BAZ", 2), ("BAR", 1), ("A", 1)]
+    assert p.most_common_issue_projects(text_keys) == most_common
+
+
+def test_parser_most_common_issue_projects_ok_duplicates():
+    text_keys = ("BAZ-42", "BAR-999", "BAZ-42", "A-1")
+    most_common = [("BAZ", 2), ("BAR", 1), ("A", 1)]
+    assert p.most_common_issue_projects(text_keys) == most_common
+
+
+def test_parser_stable_make_unique_ok():
+    data = ("BAZ-41", "BAR-999", "BAZ-41", "A-1")
+    stable_unique = ("BAZ-41", "BAR-999", "A-1")
+    assert tuple(p.stable_make_unique(data)) == stable_unique
+
+
+def test_parser_stable_make_unique_ok_empty():
+    data = tuple()
+    stable_unique = tuple()
+    assert tuple(p.stable_make_unique(data)) == stable_unique
+
+
+def test_parser_stable_make_unique_nok_non_iterable():
+    data = 42
+    message = r"'int' object is not iterable"
+    with pytest.raises(TypeError, match=message):
+        tuple(p.stable_make_unique(data))
+
+
+def test_parser_stable_make_unique_nok_non_hashable():
+    data = ({}, [], set())
+    message = r"unhashable type: 'dict'"
+    with pytest.raises(TypeError, match=message):
+        tuple(p.stable_make_unique(data))

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parsers for issues from the Nineties."""
+from collections import Counter
 import datetime as dti
 import operator
 from typing import Tuple
@@ -50,11 +51,42 @@ def split_kv(text_pair, sep):
     """Helper."""
     try:
         key, value = text_pair.split(sep, 1)
+    except TypeError:
+        return None, text_pair
     except ValueError:
         return None, text_pair
     if not key:
         return None, None
     return key, value
+
+
+def split_issue_key(text_pair, sep="-"):
+    """Split left hand project identifier text from integer local id.
+
+    Many issue tracking systems from the Nineties use dash (-) to separate the two scopes."""
+    project, serial = split_kv(text_pair, sep=sep)
+    if project:
+        return project, int(serial)
+
+    raise ValueError(
+        "%s is not a valid issue key composed of project and serial" % (text_pair,)
+    )
+
+
+def sorted_issue_keys_gen(key_iter, sep="-"):
+    """Sort by project first and serial second."""
+    for project, serial in sorted(split_issue_key(txt, sep=sep) for txt in key_iter):
+        yield "{}-{}".format(project, serial)
+
+
+def most_common_issue_projects(key_iter, n=None, sep="-"):
+    """Provide issue counts grouped by project and most frequent first."""
+    return Counter(split_issue_key(txt, sep=sep)[0] for txt in key_iter).most_common(n)
+
+
+def stable_make_unique(key_iter):
+    """Filter duplicates from hashable elements of key_iter maintaining insert order."""
+    return tuple({val: None for val in key_iter}.keys())
 
 
 def parse_dsl_entry(text_entry, final_key=None):
