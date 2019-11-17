@@ -2,6 +2,11 @@
 Changelog
 =========
 
+0.0.5 (2019-11-17)
+-----------------------------------------
+
+* Fifth release to PyPI with file system interfacing list and triage functions as well as unit tests
+
 0.0.4 (2019-11-14)
 -----------------------------------------
 
