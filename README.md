@@ -12,3 +12,10 @@ Ease the reading of relics from the Nineties
 A small but growing collection of parsers and filters
 to ease dealing with specific information structures that
 drop off of REST backends ;-)
+
+## What is not yet in it
+just sayin':
+* proxy tools like digitally signed high water mark
+* storage via lzma compression
+* work log analysis
+* process minig support
