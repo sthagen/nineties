@@ -19,3 +19,4 @@ just sayin':
 * storage via lzma compression
 * work log analysis
 * process minig support
+* flattening of deeply nested records
