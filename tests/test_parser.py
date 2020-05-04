@@ -194,6 +194,7 @@ def test_parser_split_kv_ok():
     assert p.split_kv("=", "=") == (None,) * 2
     assert p.split_kv("=", "+") == (None, "=")
     assert p.split_kv("", "+") == (None, "")
+    assert p.split_kv("", "ä") == (None, "")
 
 
 def test_parser_split_kv_nok():
