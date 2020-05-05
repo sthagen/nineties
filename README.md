@@ -20,3 +20,5 @@ just sayin':
 * work log analysis
 * process minig support
 * flattening of deeply nested records
+* refactoring the elderly pypi / packaging boilerplate
+* explore github actions vs. travis et al.
