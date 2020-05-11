@@ -22,3 +22,4 @@ just sayin':
 * flattening of deeply nested records
 * refactoring the elderly pypi / packaging boilerplate
 * explore github actions vs. travis et al.
+* make user defined fields accessible per configuration
