@@ -23,3 +23,4 @@ just sayin':
 * refactoring the elderly pypi / packaging boilerplate
 * explore github actions vs. travis et al.
 * make user defined fields accessible per configuration
+* provide time tracking views from work log entries
