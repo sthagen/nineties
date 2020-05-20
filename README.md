@@ -18,7 +18,7 @@ just sayin':
 * proxy tools like digitally signed high water mark
 * storage via lzma compression
 * work log analysis
-* process minig support
+* process mining support
 * flattening of deeply nested records
 * refactoring the elderly pypi / packaging boilerplate
 * explore github actions vs. travis et al.
