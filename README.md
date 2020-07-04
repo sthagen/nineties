@@ -18,6 +18,7 @@ just sayin':
 * proxy tools like digitally signed high water mark
 * storage via lzma compression
 * GDPR conforming mappings
+* GDPR conforming caching
 * work log analysis
 * process mining support
 * flattening of deeply nested records
