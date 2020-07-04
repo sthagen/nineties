@@ -24,3 +24,5 @@ just sayin':
 * explore github actions vs. travis et al.
 * make user defined fields accessible per configuration
 * provide time tracking views from work log entries
+
+Note: The name of the default branch is `default` :wink:
