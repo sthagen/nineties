@@ -17,6 +17,7 @@ drop off of REST backends ;-)
 just sayin':
 * proxy tools like digitally signed high water mark
 * storage via lzma compression
+* GDPR conforming mappings
 * work log analysis
 * process mining support
 * flattening of deeply nested records
