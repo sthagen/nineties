@@ -27,4 +27,4 @@ just sayin':
 * make user defined fields accessible per configuration
 * provide time tracking views from work log entries
 
-Note: The name of the default branch is `default` :wink:
+Note: The name of the default branch (with special meaning for github and gitlab users) is `default` :wink:
