@@ -8,6 +8,9 @@
 # python-nineties
 Ease the reading of relics from the Nineties
 
+## Status
+Experimental
+
 ## What is in it
 A small, maybe growing collection of parsers and filters
 to ease dealing with specific information structures that
