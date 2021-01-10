@@ -30,4 +30,4 @@ just sayin':
 * make user defined fields accessible per configuration
 * provide time tracking views from work log entries
 
-**Note**: The name of the default branch is `default`.
+**Note**: The default branch is `default`.
