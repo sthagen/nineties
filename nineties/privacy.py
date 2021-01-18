@@ -36,7 +36,7 @@ UNKNOWN_ENTITIES = {asp: e for asp, e in zip(ASPECTS, PLACE_HOLDERS)}
 
 
 FAKE = Faker()
-FAKE.seed(42)
+Faker.seed(42)
 
 
 def sentence():
