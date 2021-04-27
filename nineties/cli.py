@@ -21,7 +21,7 @@ if tuple(sys.version_info) < (3, 6):
 
 
 FAKE = Faker()
-FAKE.seed(42)
+Faker.seed(42)
 
 
 def parse(json_text, process_with):
