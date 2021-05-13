@@ -2,6 +2,11 @@
 Changelog
 =========
 
+0.0.6 (2021-05-13)
+-----------------------------------------
+
+* Sixth release to PyPI with compatibility info changes and pinning of faker dependency
+
 0.0.5 (2019-11-17)
 -----------------------------------------
 
