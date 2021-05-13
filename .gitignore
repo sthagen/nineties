@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Local dev stuff
+*~
+.idea
+local_publi.sh
