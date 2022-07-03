@@ -5,6 +5,7 @@ import operator
 from collections import Counter
 from typing import Tuple
 
+DASH = '-'
 ISO_FMT = '%Y-%m-%dT%H:%M:%S.%f'
 ISO_LENGTH = len('YYYY-mm-ddTHH:MM:SS.fff')
 TZ_OP = {'+': operator.sub, '-': operator.add}  # + indicates ahead of UTC
@@ -60,7 +61,7 @@ def split_kv(text_pair, sep):
     return key, value
 
 
-def split_issue_key(text_pair, sep="-"):
+def split_issue_key(text_pair, sep=DASH):
     """Split left hand project identifier text from integer local id.
 
     Many issue tracking systems from the Nineties use dash (-) to separate the two scopes."""
@@ -71,13 +72,13 @@ def split_issue_key(text_pair, sep="-"):
     raise ValueError('%s is not a valid issue key composed of project and serial' % (text_pair,))
 
 
-def sorted_issue_keys_gen(key_iter, sep="-"):
+def sorted_issue_keys_gen(key_iter, sep=DASH):
     """Sort by project first and serial second."""
     for project, serial in sorted(split_issue_key(txt, sep=sep) for txt in key_iter):
         yield '{}-{}'.format(project, serial)
 
 
-def most_common_issue_projects(key_iter, n=None, sep="-"):
+def most_common_issue_projects(key_iter, n=None, sep=DASH):
     """Provide issue counts grouped by project and most frequent first."""
     return Counter(split_issue_key(txt, sep=sep)[0] for txt in key_iter).most_common(n)
 
