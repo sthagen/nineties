@@ -5,16 +5,16 @@ import operator
 from collections import Counter
 from typing import Tuple
 
-ISO_FMT = "%Y-%m-%dT%H:%M:%S.%f"
-ISO_LENGTH = len("YYYY-mm-ddTHH:MM:SS.fff")
-TZ_OP = {"+": operator.sub, "-": operator.add}  # + indicates ahead of UTC
+ISO_FMT = '%Y-%m-%dT%H:%M:%S.%f'
+ISO_LENGTH = len('YYYY-mm-ddTHH:MM:SS.fff')
+TZ_OP = {'+': operator.sub, '-': operator.add}  # + indicates ahead of UTC
 
-JR_NULL = "<null>"
-NA = "n/a"
+JR_NULL = '<null>'
+NA = 'n/a'
 
-START_DATA, END_DATA = "[", "]"
-REC_SEP, KV_SEP = ",", "="
-FINAL_DSL_KEY = "final"
+START_DATA, END_DATA = '[', ']'
+REC_SEP, KV_SEP = ',', '='
+FINAL_DSL_KEY = 'final'
 
 
 def split_at(text_fragment: str, pos: int) -> Tuple:
@@ -39,7 +39,7 @@ def parse_timestamp(text_stamp):
     sign_pos = 0
     assert off and off[sign_pos] in TZ_OP
 
-    m_start = 3 if ":" not in off else 4
+    m_start = 3 if ':' not in off else 4
     assert len(off) == m_start + 2
 
     oper, hours, minutes = off[sign_pos], int(off[1:3]), int(off[m_start:])
@@ -68,13 +68,13 @@ def split_issue_key(text_pair, sep="-"):
     if project:
         return project, int(serial)
 
-    raise ValueError("%s is not a valid issue key composed of project and serial" % (text_pair,))
+    raise ValueError('%s is not a valid issue key composed of project and serial' % (text_pair,))
 
 
 def sorted_issue_keys_gen(key_iter, sep="-"):
     """Sort by project first and serial second."""
     for project, serial in sorted(split_issue_key(txt, sep=sep) for txt in key_iter):
-        yield "{}-{}".format(project, serial)
+        yield '{}-{}'.format(project, serial)
 
 
 def most_common_issue_projects(key_iter, n=None, sep="-"):
@@ -115,9 +115,9 @@ def parse_dsl_entry(text_entry, final_key=None):
 
     for key, value in record.items():
         key_lower = key.lower()
-        if "date" in key_lower:
+        if 'date' in key_lower:
             record[key] = parse_timestamp(value)
-        elif "id" in key_lower or "sequence" in key_lower:
+        elif 'id' in key_lower or 'sequence' in key_lower:
             record[key] = int(value)
         elif key == final_key and value == JR_NULL:
             record[key] = NA
