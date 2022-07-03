@@ -19,7 +19,7 @@ EFFECTIVE_VALUE = {priv.NAME: {NAME_ALIAS: NAME_ENTITY}, priv.EMAIL: {}, priv.TE
 S_NAMES = ('Allison Hill', 'Noah Rhodes')
 NAME_SAFE_FIRST = S_NAMES[0]
 EMAIL_ALIAS = 'a.b@c.de'
-S_EMAIL = 'jeffrey94@hotmail.com'
+S_EMAIL = 'lrobinson@example.com'
 S_TEXT = 'Beautiful instead ahead despite measure ago current.'
 
 
