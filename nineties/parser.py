@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Parsers for issues from the Nineties."""
-from collections import Counter
 import datetime as dti
 import operator
+from collections import Counter
 from typing import Tuple
 
 ISO_FMT = "%Y-%m-%dT%H:%M:%S.%f"
@@ -68,9 +68,7 @@ def split_issue_key(text_pair, sep="-"):
     if project:
         return project, int(serial)
 
-    raise ValueError(
-        "%s is not a valid issue key composed of project and serial" % (text_pair,)
-    )
+    raise ValueError("%s is not a valid issue key composed of project and serial" % (text_pair,))
 
 
 def sorted_issue_keys_gen(key_iter, sep="-"):
@@ -105,8 +103,7 @@ def parse_dsl_entry(text_entry, final_key=None):
     final_key_indicator = REC_SEP + final_key + KV_SEP
     empty_goal_indicator = final_key_indicator + JR_NULL
     if (  # pylint: disable=bad-continuation
-        payload.endswith(empty_goal_indicator)
-        and payload.count(final_key_indicator) == 1
+        payload.endswith(empty_goal_indicator) and payload.count(final_key_indicator) == 1
     ):
         text_pairs = payload.split(REC_SEP)
     else:
