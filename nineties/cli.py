@@ -3,6 +3,7 @@
 import json
 import os
 import sys
+from typing import no_type_check
 
 try:
     from faker import Faker
@@ -22,6 +23,7 @@ FAKE = Faker()
 Faker.seed(42)
 
 
+@no_type_check
 def parse(json_text, process_with):
     """Dive deep ..."""
     data = json.loads(json_text)
@@ -33,6 +35,7 @@ def parse(json_text, process_with):
     return record
 
 
+@no_type_check
 def main(argv=None):
     """Drive the understanding ..."""
     argv = sys.argv if argv is None else argv
