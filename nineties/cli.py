@@ -7,7 +7,7 @@ import sys
 try:
     from faker import Faker
 except ImportError as err:
-    raise ImportError("dependency faker not found - " "please pip install faker. Details %s" % (err,))
+    raise ImportError('dependency faker not found - please pip install faker. Details %s' % (err,))
 
 
 import nineties.parser as p90
