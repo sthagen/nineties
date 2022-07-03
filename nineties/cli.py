@@ -15,7 +15,7 @@ import nineties.privacy as priv
 
 # Below to profit from insert ordering of dicts in 3.6+
 if tuple(sys.version_info) < (3, 6):
-    raise RuntimeError("python version 3.6 or higher required (better dicts)")
+    raise RuntimeError('python version 3.6 or higher required (better dicts)')
 
 
 FAKE = Faker()
@@ -37,19 +37,19 @@ def main(argv=None):
     """Drive the understanding ..."""
     argv = sys.argv if argv is None else argv
     parser_map = {
-        "dsl": p90.parse_dsl_entry,
-        "timestamp": p90.parse_timestamp,
-        "name": priv.safe_name,
+        'dsl': p90.parse_dsl_entry,
+        'timestamp': p90.parse_timestamp,
+        'name': priv.safe_name,
     }
     for text_or_file in argv[1:]:
         if os.path.isfile(text_or_file):
-            with open(text_or_file, "rt") as json_file:
+            with open(text_or_file, 'rt') as json_file:
                 all_text = json_file.read()
             data = parse(all_text, parser_map)
         else:
             if p90.START_DATA in text_or_file:
                 data = parse(text_or_file, parser_map)
             else:
-                data = {"error": text_or_file}
+                data = {'error': text_or_file}
 
         print(data)
