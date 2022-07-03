@@ -1,6 +1,6 @@
 # nineties
 
-[![license](https://img.shields.io/github/license/sthagen/python-nineties?style=flat)](https://github.com/sthagen/python-nineties/blob/default/LICENSE)
+[![license](https://img.shields.io/github/license/sthagen/nineties?style=flat)](https://github.com/sthagen/nineties/blob/default/LICENSE)
 [![version](https://img.shields.io/pypi/v/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![downloads](https://img.shields.io/pypi/dm/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![wheel](https://img.shields.io/pypi/wheel/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
@@ -14,14 +14,17 @@ Ease the reading of relics from the Nineties.
 [![Known Vulnerabilities](https://snyk.io/test/github/sthagen/python-nineties/badge.svg)](https://snyk.io/test/github/sthagen/python-nineties)
 
 ## Status
+
 Experimental
 
 ## What is in it
+
 A small, maybe growing collection of parsers and filters
 to ease dealing with specific information structures that
 drop off of REST backends ;-)
 
 ## What is not yet in it
+
 just sayin':
 * proxy tools like digitally signed high water mark
 * storage via lzma compression
