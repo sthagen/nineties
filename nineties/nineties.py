@@ -24,11 +24,9 @@ def read_folder(folder_path, get_size=os.path.getsize):
     for name, file_path in elements_of_gen(folder_path):
         with open(file_path, "rb") as in_file:
             sha256_hash = hashlib.sha256()
-            for byte_block in iter(lambda in_f=in_file: in_f .read(BUFFER_BYTES), b""):
+            for byte_block in iter(lambda in_f=in_file: in_f.read(BUFFER_BYTES), b""):
                 sha256_hash.update(byte_block)
-            hash_map.setdefault(sha256_hash.hexdigest(), []).append(
-                (name, get_size(file_path))
-            )
+            hash_map.setdefault(sha256_hash.hexdigest(), []).append((name, get_size(file_path)))
     return hash_map
 
 
