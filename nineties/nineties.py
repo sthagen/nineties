@@ -4,7 +4,7 @@ import hashlib
 import os
 
 BUFFER_BYTES = 2 << 15
-DEBUG = os.getenv("DEBUG_90S")
+DEBUG = os.getenv('DEBUG_90S')
 
 
 def list_dir(folder_path):
@@ -22,9 +22,9 @@ def read_folder(folder_path, get_size=os.path.getsize):
     """Yield hash map of lists with name, byte size pairs of sorted by name (hint: timestamp)."""
     hash_map = {}
     for name, file_path in elements_of_gen(folder_path):
-        with open(file_path, "rb") as in_file:
+        with open(file_path, 'rb') as in_file:
             sha256_hash = hashlib.sha256()
-            for byte_block in iter(lambda in_f=in_file: in_f.read(BUFFER_BYTES), b""):
+            for byte_block in iter(lambda in_f=in_file: in_f.read(BUFFER_BYTES), b''):
                 sha256_hash.update(byte_block)
             hash_map.setdefault(sha256_hash.hexdigest(), []).append((name, get_size(file_path)))
     return hash_map
