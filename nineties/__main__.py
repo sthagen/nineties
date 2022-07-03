@@ -4,5 +4,5 @@ import sys
 
 from nineties.cli import main
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     sys.exit(main(sys.argv))  # pragma: no cover
