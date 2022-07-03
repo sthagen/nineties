@@ -6,10 +6,10 @@ import pytest  # type: ignore
 
 import nineties.parser as p
 
-VALID_FUTURE_ISO = "3210-09-08T07:06:05.432"
-VALID_FUTURE_ISO_CEST = VALID_FUTURE_ISO + "+0200"
-VALID_FUTURE_ISO_CEST_COLON = VALID_FUTURE_ISO + "+02:00"
-VALID_FUTURE_DT_UTC_FROM_CEST = dti.datetime.strptime("3210-09-08T05:06:05.432", p.ISO_FMT)
+VALID_FUTURE_ISO = '3210-09-08T07:06:05.432'
+VALID_FUTURE_ISO_CEST = VALID_FUTURE_ISO + '+0200'
+VALID_FUTURE_ISO_CEST_COLON = VALID_FUTURE_ISO + '+02:00'
+VALID_FUTURE_DT_UTC_FROM_CEST = dti.datetime.strptime('3210-09-08T05:06:05.432', p.ISO_FMT)
 VALID_FUTURE_DT_UTC_FROM_UTC = dti.datetime.strptime(VALID_FUTURE_ISO, p.ISO_FMT)
 
 
@@ -30,15 +30,15 @@ def test_parse_timestamp_ok_future_iso_cest():
 def test_parse_timestamp_ok_future_iso_implicit_utc():
     then = VALID_FUTURE_DT_UTC_FROM_UTC
     assert p.parse_timestamp(VALID_FUTURE_ISO) == then
-    assert p.parse_timestamp(VALID_FUTURE_ISO + "+00:00") == then
+    assert p.parse_timestamp(VALID_FUTURE_ISO + '+00:00') == then
 
 
 def test_parse_timestamp_ok_future_iso_utc():
     then = VALID_FUTURE_DT_UTC_FROM_UTC
-    assert p.parse_timestamp(VALID_FUTURE_ISO + "+0000") == then
-    assert p.parse_timestamp(VALID_FUTURE_ISO + "+00:00") == then
-    assert p.parse_timestamp(VALID_FUTURE_ISO + "-0000") == then
-    assert p.parse_timestamp(VALID_FUTURE_ISO + "-00:00") == then
+    assert p.parse_timestamp(VALID_FUTURE_ISO + '+0000') == then
+    assert p.parse_timestamp(VALID_FUTURE_ISO + '+00:00') == then
+    assert p.parse_timestamp(VALID_FUTURE_ISO + '-0000') == then
+    assert p.parse_timestamp(VALID_FUTURE_ISO + '-00:00') == then
 
 
 def test_parse_timestamp_nok_outer_length():
@@ -48,24 +48,24 @@ def test_parse_timestamp_nok_outer_length():
 
 def test_parse_timestamp_nok_offset_length():
     with pytest.raises(AssertionError):
-        p.parse_timestamp(VALID_FUTURE_ISO + "+12:34X")
+        p.parse_timestamp(VALID_FUTURE_ISO + '+12:34X')
     with pytest.raises(AssertionError):
-        p.parse_timestamp(VALID_FUTURE_ISO + "+1234X")
+        p.parse_timestamp(VALID_FUTURE_ISO + '+1234X')
 
 
 def test_parse_timestamp_nok_offset_sign():
     with pytest.raises(AssertionError):
-        p.parse_timestamp(VALID_FUTURE_ISO + "*1234")
+        p.parse_timestamp(VALID_FUTURE_ISO + '*1234')
 
 
 def test_parse_timestamp_nok_offset_hours_value():
     with pytest.raises(ValueError):
-        p.parse_timestamp(VALID_FUTURE_ISO + "+XX34")
+        p.parse_timestamp(VALID_FUTURE_ISO + '+XX34')
 
 
 def test_parse_timestamp_nok_offset_minutes_value():
     with pytest.raises(ValueError):
-        p.parse_timestamp(VALID_FUTURE_ISO + "+12XX")
+        p.parse_timestamp(VALID_FUTURE_ISO + '+12XX')
 
 
 def test_parse_dsl_entry_nok_no_content():
@@ -80,13 +80,13 @@ def test_parse_dsl_entry_nok_start_data_wrong():
 
 
 def test_parse_dsl_entry_nok_only_kv_seps():
-    text_entry = '"tag@42[=,=,=,=,==,===,=,' + p.FINAL_DSL_KEY + "=" + "do_not_care" + ']"'
-    assert p.parse_dsl_entry(text_entry) == {"final": "do_not_care"}
+    text_entry = '"tag@42[=,=,=,=,==,===,=,' + p.FINAL_DSL_KEY + '=' + 'do_not_care' + ']"'
+    assert p.parse_dsl_entry(text_entry) == {'final': 'do_not_care'}
 
 
 def test_parse_dsl_entry_nok_start_data_multiple():
     text_entry = '"tag@42[[a=b,' + p.FINAL_DSL_KEY + "=" + "do_not_care" + ']"'
-    assert p.parse_dsl_entry(text_entry) == {"[a": "b", "final": "do_not_care"}
+    assert p.parse_dsl_entry(text_entry) == {'[a': 'b', 'final': 'do_not_care'}
 
 
 def test_parse_dsl_entry_nok_missing_kv_sep_and_value():
@@ -97,14 +97,14 @@ def test_parse_dsl_entry_nok_missing_kv_sep_and_value():
 
 def test_parse_dsl_entry_nok_rococo_wrong():
     text_entry = "'tag@42[a=b,e=" + "no_strip" + "]'"
-    assert p.parse_dsl_entry(text_entry, final_key="e") == {"a": "b", "e": "no_strip]'"}
+    assert p.parse_dsl_entry(text_entry, final_key='e') == {'a': 'b', 'e': "no_strip]'"}
 
 
 def test_parse_dsl_entry_ok_final_value_contains_key():
     text_entry = '"tag@42[a=b,e=e=e,e=e,date=2]"'
-    assert p.parse_dsl_entry(text_entry, final_key="e") == {
-        "a": "b",
-        "e": "e=e,e=e,date=2",
+    assert p.parse_dsl_entry(text_entry, final_key='e') == {
+        'a': 'b',
+        'e': 'e=e,e=e,date=2',
     }
 
 
@@ -117,7 +117,7 @@ def test_parse_dsl_entry_nok_final_key_wrong_implicit():
 def test_parse_dsl_entry_nok_final_key_wrong_explicit():
     text_entry = '"tag@42[a=b,right=' + "do_not_care" + ']"'
     with pytest.raises(ValueError):
-        p.parse_dsl_entry(text_entry, final_key="wrong")
+        p.parse_dsl_entry(text_entry, final_key='wrong')
 
 
 def test_parse_dsl_entry_ok():
@@ -162,40 +162,40 @@ def test_parse_dsl_entry_nok_id_value_no_int():
 
 
 def test_parser_split_kv_ok():
-    assert p.split_kv("pragma", "ag") == ("pr", "ma")
-    assert p.split_kv("start", "s") == (None,) * 2
-    assert p.split_kv("+==", "=") == ("+", "=")
-    assert p.split_kv("==", "=") == (None,) * 2
-    assert p.split_kv("=", "=") == (None,) * 2
-    assert p.split_kv("=", "+") == (None, "=")
-    assert p.split_kv("", "+") == (None, "")
-    assert p.split_kv("", "ä") == (None, "")
+    assert p.split_kv('pragma', 'ag') == ('pr', 'ma')
+    assert p.split_kv('start', 's') == (None,) * 2
+    assert p.split_kv('+==', '=') == ('+', '=')
+    assert p.split_kv('==', '=') == (None,) * 2
+    assert p.split_kv('=', '=') == (None,) * 2
+    assert p.split_kv('=', '+') == (None, '=')
+    assert p.split_kv('', '+') == (None, '')
+    assert p.split_kv('', 'ä') == (None, '')
 
 
 def test_parser_split_kv_nok():
-    assert p.split_kv("", 42) == (None, "")
+    assert p.split_kv('', 42) == (None, '')
 
 
 def test_parser_split_issue_key_ok():
-    text_key = "BAZ-42"
-    assert p.split_issue_key(text_key) == ("BAZ", 42)
+    text_key = 'BAZ-42'
+    assert p.split_issue_key(text_key) == ('BAZ', 42)
 
 
 def test_parser_split_issue_key_ok_negative():
-    text_key = "BAZ--42"
-    assert p.split_issue_key(text_key) == ("BAZ", -42)
+    text_key = 'BAZ--42'
+    assert p.split_issue_key(text_key) == ('BAZ', -42)
 
 
 def test_parser_split_issue_key_nok_wrong_sep():
-    text_key = "BAZ_42"
-    message = text_key + r" is not a valid issue key composed of project and serial"
+    text_key = 'BAZ_42'
+    message = text_key + r' is not a valid issue key composed of project and serial'
     with pytest.raises(ValueError, match=message):
         assert p.split_issue_key(text_key)
 
 
 def test_parser_split_issue_key_nok_no_serial():
-    no_serial = "Bar"
-    text_key = "Foo-" + no_serial
+    no_serial = 'Bar'
+    text_key = 'Foo-' + no_serial
     message = r"invalid literal for int\(\) with base 10: '" + no_serial + "'"
     with pytest.raises(ValueError, match=message):
         assert p.split_issue_key(text_key)
