@@ -11,16 +11,16 @@ import nineties.privacy as priv
 
 ALIASES_ENV_VALUE = None
 ALIASES_ENV = priv.ALIASES_ENV
-NAME_ALIAS = "j."
-NAME_ENTITY = "jane"
+NAME_ALIAS = 'j.'
+NAME_ENTITY = 'jane'
 JSON_TEXT = '{"' + priv.NAME + '": {"' + NAME_ALIAS + '": "' + NAME_ENTITY + '"}}'
 EFFECTIVE_VALUE = {priv.NAME: {NAME_ALIAS: NAME_ENTITY}, priv.EMAIL: {}, priv.TEXT: {}}
 
-S_NAMES = ("Allison Hill", "Noah Rhodes")
+S_NAMES = ('Allison Hill', 'Noah Rhodes')
 NAME_SAFE_FIRST = S_NAMES[0]
-EMAIL_ALIAS = "a.b@c.de"
-S_EMAIL = "jeffrey94@hotmail.com"
-S_TEXT = "Beautiful instead ahead despite measure ago current."
+EMAIL_ALIAS = 'a.b@c.de'
+S_EMAIL = 'jeffrey94@hotmail.com'
+S_TEXT = 'Beautiful instead ahead despite measure ago current.'
 
 
 def setup():
@@ -30,14 +30,14 @@ def setup():
 
 def teardown():
     if ALIASES_ENV_VALUE is None:
-        os.environ[ALIASES_ENV] = ""
+        os.environ[ALIASES_ENV] = ''
     else:
         os.environ[ALIASES_ENV] = ALIASES_ENV_VALUE
 
 
 def test_privacy_expose_aliases_ok_set_empty():
     os.environ[ALIASES_ENV] = ''
-    message = r"Expecting value: line 1 column 1 \(char 0\)"
+    message = r'Expecting value: line 1 column 1 \(char 0\)'
     with pytest.raises(json.decoder.JSONDecodeError, match=message):
         importlib.reload(priv)
 
@@ -56,19 +56,19 @@ def test_privacy_expose_aliases_ok_set_json_object_text_non_default():
 
 def test_privacy_expose_aliases_nok_set_json_non_object_text():
     os.environ[priv.ALIASES_ENV] = '[1, 2, 3, "foo"]'
-    message = r"list indices must be integers or slices, not str"
+    message = r'list indices must be integers or slices, not str'
     with pytest.raises(TypeError, match=message):
         importlib.reload(priv)
 
 
-@mock.patch("os.path.isfile")
+@mock.patch('os.path.isfile')
 def test_privacy_expose_aliases_ok_set_json_file(if_mock):
-    a_file = "faked-file.really"
+    a_file = 'faked-file.really'
     if_mock.return_value = True
     mock_open = mock.mock_open(read_data=JSON_TEXT)
 
     os.environ[priv.ALIASES_ENV] = a_file
-    with mock.patch("builtins.open", mock_open):
+    with mock.patch('builtins.open', mock_open):
         importlib.reload(priv)
 
     if_mock.assert_called_with(a_file)
@@ -97,7 +97,7 @@ def test_privacy_ensure_privacy_asp_ok_name():
 def test_privacy_ensure_privacy_asp_ok_name_new():
     os.environ[priv.ALIASES_ENV] = JSON_TEXT
     importlib.reload(priv)
-    assert priv.ensure_privacy(priv.NAME, "n.n.") == S_NAMES[1]
+    assert priv.ensure_privacy(priv.NAME, 'n.n.') == S_NAMES[1]
 
 
 def test_privacy_sentence_ok():
