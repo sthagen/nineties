@@ -3,7 +3,7 @@
 import datetime as dti
 import operator
 from collections import Counter
-from typing import Tuple
+from typing import Tuple, no_type_check
 
 DASH = '-'
 ISO_FMT = '%Y-%m-%dT%H:%M:%S.%f'
@@ -18,11 +18,12 @@ REC_SEP, KV_SEP = ',', '='
 FINAL_DSL_KEY = 'final'
 
 
-def split_at(text_fragment: str, pos: int) -> Tuple:
+def split_at(text_fragment: str, pos: int) -> Tuple[str, str]:
     """Split text fragment by position and return pair as tuple."""
     return text_fragment[:pos], text_fragment[pos:]
 
 
+@no_type_check
 def parse_timestamp(text_stamp):
     """
     Parse the timestamp formats found in REST responses from the Nineties.
@@ -48,6 +49,7 @@ def parse_timestamp(text_stamp):
     return TZ_OP[oper](local_time, dti.timedelta(hours=hours, minutes=minutes))
 
 
+@no_type_check
 def split_kv(text_pair, sep):
     """Helper."""
     try:
@@ -61,6 +63,7 @@ def split_kv(text_pair, sep):
     return key, value
 
 
+@no_type_check
 def split_issue_key(text_pair, sep=DASH):
     """Split left hand project identifier text from integer local id.
 
@@ -72,22 +75,26 @@ def split_issue_key(text_pair, sep=DASH):
     raise ValueError('%s is not a valid issue key composed of project and serial' % (text_pair,))
 
 
+@no_type_check
 def sorted_issue_keys_gen(key_iter, sep=DASH):
     """Sort by project first and serial second."""
     for project, serial in sorted(split_issue_key(txt, sep=sep) for txt in key_iter):
         yield '{}-{}'.format(project, serial)
 
 
+@no_type_check
 def most_common_issue_projects(key_iter, n=None, sep=DASH):
     """Provide issue counts grouped by project and most frequent first."""
     return Counter(split_issue_key(txt, sep=sep)[0] for txt in key_iter).most_common(n)
 
 
+@no_type_check
 def stable_make_unique(key_iter):
     """Filter duplicates from hashable elements of key_iter maintaining insert order."""
     return tuple({val: None for val in key_iter}.keys())
 
 
+@no_type_check
 def parse_dsl_entry(text_entry, final_key=None):
     """
     Parse some nifty dict() like argument list where the final rhs is untrusted.
