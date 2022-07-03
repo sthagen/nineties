@@ -9,7 +9,7 @@ DEBUG = os.getenv('DEBUG_90S')
 
 def list_dir(folder_path):
     """Access the dir and yield the local names inside."""
-    return os.listdir(folder_path)
+    return sorted(os.listdir(folder_path))
 
 
 def elements_of_gen(folder_path):
