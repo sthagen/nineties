@@ -12,6 +12,7 @@ aspect -> alias -> entity, where aspect is in
 (NAME, EMAIL, TEXT) for this version."""
 import json
 import os
+
 from faker import Faker
 
 NAME, EMAIL, TEXT = "name", "email", "text"
