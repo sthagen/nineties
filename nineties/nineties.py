@@ -2,22 +2,26 @@
 """Peel the onions from the Nineties."""
 import hashlib
 import os
+from typing import no_type_check
 
 BUFFER_BYTES = 2 << 15
 DEBUG = os.getenv('DEBUG_90S')
 
 
+@no_type_check
 def list_dir(folder_path):
     """Access the dir and yield the local names inside."""
     return sorted(os.listdir(folder_path))
 
 
+@no_type_check
 def elements_of_gen(folder_path):
     """Prefix names in folder path and yield sorted pairs of names and file paths."""
     for name in sorted(name for name in list_dir(folder_path)):
         yield name, os.path.join(folder_path, name)
 
 
+@no_type_check
 def read_folder(folder_path, get_size=os.path.getsize):
     """Yield hash map of lists with name, byte size pairs of sorted by name (hint: timestamp)."""
     hash_map = {}
@@ -30,6 +34,7 @@ def read_folder(folder_path, get_size=os.path.getsize):
     return hash_map
 
 
+@no_type_check
 def triage_hashes(hash_map):
     """Triage hash map in pair of names to keep and to remove in that order.
 
