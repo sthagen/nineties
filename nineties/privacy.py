@@ -15,15 +15,15 @@ import os
 
 from faker import Faker
 
-NAME, EMAIL, TEXT = "name", "email", "text"
+NAME, EMAIL, TEXT = 'name', 'email', 'text'
 ASPECTS = NAME, EMAIL, TEXT
 EMPTY_ALIASES = {k: {} for k in ASPECTS}
-ALIASES_ENV = "ALIASES_90S"
+ALIASES_ENV = 'ALIASES_90S'
 ALIASES = os.getenv(ALIASES_ENV, EMPTY_ALIASES)
 
 if ALIASES != EMPTY_ALIASES:
     if os.path.isfile(ALIASES):
-        with open(ALIASES, "rt") as json_file:
+        with open(ALIASES, 'rt') as json_file:
             ALIASES = json.load(json_file)
     else:
         ALIASES = json.loads(ALIASES)
@@ -31,7 +31,7 @@ if ALIASES != EMPTY_ALIASES:
         if asp not in ALIASES:
             ALIASES[asp] = {}
 
-NO_NAME, NO_EMAIL, NO_TEXT = "no_name", "no_email", "no_text"
+NO_NAME, NO_EMAIL, NO_TEXT = 'no_name', 'no_email', 'no_text'
 PLACE_HOLDERS = NO_NAME, NO_EMAIL, NO_TEXT
 UNKNOWN_ENTITIES = {asp: e for asp, e in zip(ASPECTS, PLACE_HOLDERS)}
 
