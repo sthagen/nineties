@@ -3,7 +3,9 @@
 import datetime as dti
 import sys
 from unittest import mock
+
 import pytest  # type: ignore
+
 import nineties.cli as cli
 import nineties.parser as p90
 import nineties.privacy as priv
@@ -33,13 +35,13 @@ def test_python_version_guard():
         v_info.minor = 5
         del sys.modules["nineties.cli"]
         with pytest.raises(RuntimeError, match=r".*higher.*"):
-            import nineties.cli
+            import nineties.cli  # noqa
 
 
 def test_import_guards():
     with mock.patch.dict(sys.modules, {"faker": None}):
         with pytest.raises(ImportError, match=r".*faker.*"):
-            import nineties.cli
+            import nineties.cli  # noqa
 
 
 def test_cli_main_ok():
