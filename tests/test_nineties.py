@@ -2,7 +2,9 @@
 # pylint: disable=missing-docstring,no-name-in-module
 import os
 from unittest import mock
+
 import pytest  # type: ignore
+
 import nineties.nineties as n
 
 FOLDER_PATH = os.path.join("tests", "data")
@@ -16,9 +18,7 @@ SHA256_OF_ELEMENTS_IN_FOLDER_PATH = [
     "7d2ef141eadd8f200cdf13762ec3260e20509ef2cda11bce29f5701ff966bb4e",
     "7d2ef141eadd8f200cdf13762ec3260e20509ef2cda11bce29f5701ff966bb4e",
 ]
-PAIRS_FROM_LIST = [
-    (name, os.path.join(FOLDER_PATH, name)) for name in ELEMENTS_IN_FOLDER_PATH
-]
+PAIRS_FROM_LIST = [(name, os.path.join(FOLDER_PATH, name)) for name in ELEMENTS_IN_FOLDER_PATH]
 
 HASH_MAP_FOLDER_PATH = {
     SHA256_OF_ELEMENTS_IN_FOLDER_PATH[0]: [(ELEMENTS_IN_FOLDER_PATH[0], 0)],
