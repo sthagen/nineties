@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=missing-docstring,unused-import,reimported
-from unittest import mock
 import importlib
 import json
 import os
+from unittest import mock
+
 import pytest  # type: ignore
+
 import nineties.privacy as priv
 
 ALIASES_ENV_VALUE = None
