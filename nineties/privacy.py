@@ -12,24 +12,25 @@ aspect -> alias -> entity, where aspect is in
 (NAME, EMAIL, TEXT) for this version."""
 import json
 import os
+from typing import no_type_check
 
 from faker import Faker
 
 NAME, EMAIL, TEXT = 'name', 'email', 'text'
 ASPECTS = NAME, EMAIL, TEXT
-EMPTY_ALIASES = {k: {} for k in ASPECTS}
+EMPTY_ALIASES = {k: {} for k in ASPECTS}  # type: ignore
 ALIASES_ENV = 'ALIASES_90S'
 ALIASES = os.getenv(ALIASES_ENV, EMPTY_ALIASES)
 
 if ALIASES != EMPTY_ALIASES:
-    if os.path.isfile(ALIASES):
-        with open(ALIASES, 'rt') as json_file:
+    if os.path.isfile(ALIASES):  # type: ignore
+        with open(ALIASES, 'rt') as json_file:  # type: ignore
             ALIASES = json.load(json_file)
     else:
-        ALIASES = json.loads(ALIASES)
+        ALIASES = json.loads(ALIASES)  # type: ignore
     for asp in ASPECTS:
         if asp not in ALIASES:
-            ALIASES[asp] = {}
+            ALIASES[asp] = {}  # type: ignore
 
 NO_NAME, NO_EMAIL, NO_TEXT = 'no_name', 'no_email', 'no_text'
 PLACE_HOLDERS = NO_NAME, NO_EMAIL, NO_TEXT
@@ -40,31 +41,35 @@ FAKE = Faker()
 Faker.seed(42)
 
 
-def sentence():
+@no_type_check
+def sentence() -> str:
     return FAKE.sentence(nb_words=6)
 
 
 MAP = {NAME: FAKE.name, EMAIL: FAKE.email, TEXT: sentence}
-SURROGATES = {k: {} for k in ASPECTS}
+SURROGATES = {k: {} for k in ASPECTS}  # type: ignore
 for asp in ASPECTS:
     unique = []
-    for e in ALIASES[asp].values():
+    for e in ALIASES[asp].values():  # type: ignore
         if e not in unique:
             unique.append(e)
     for e in unique:
         SURROGATES[asp][e] = MAP[asp]()
 
 
+@no_type_check
 def expose_aliases(aspect=None):
     """Expose the current aliases."""
     return ALIASES if aspect is None else ALIASES[aspect]
 
 
+@no_type_check
 def expose_surrogates(aspect=None):
     """Expose the current mappings to safe identifiers."""
     return SURROGATES if aspect is None else SURROGATES[aspect]
 
 
+@no_type_check
 def ensure_privacy(aspect, alias, entity=None):
     """Return safe identifier, update ALIASES and SURROGATES accordingly."""
     safe = MAP[aspect]
@@ -81,11 +86,11 @@ def ensure_privacy(aspect, alias, entity=None):
     return SURROGATES[aspect][found]
 
 
-def safe_name(text_alias):
+def safe_name(text_alias: str) -> str:
     """Provide specialized name parser / anonymity provider."""
-    return ensure_privacy(NAME, text_alias)
+    return ensure_privacy(NAME, text_alias)  # type: ignore
 
 
-def safe_email(text_alias):
+def safe_email(text_alias: str) -> str:
     """Provide specialized name parser / anonymity provider."""
-    return ensure_privacy(EMAIL, text_alias)
+    return ensure_privacy(EMAIL, text_alias)  # type: ignore
