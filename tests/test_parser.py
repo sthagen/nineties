@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=missing-docstring
 import datetime as dti
-import pytest  # type: ignore
-import nineties.parser as p
 
+import pytest  # type: ignore
+
+import nineties.parser as p
 
 VALID_FUTURE_ISO = "3210-09-08T07:06:05.432"
 VALID_FUTURE_ISO_CEST = VALID_FUTURE_ISO + "+0200"
 VALID_FUTURE_ISO_CEST_COLON = VALID_FUTURE_ISO + "+02:00"
-VALID_FUTURE_DT_UTC_FROM_CEST = dti.datetime.strptime(
-    "3210-09-08T05:06:05.432", p.ISO_FMT
-)
+VALID_FUTURE_DT_UTC_FROM_CEST = dti.datetime.strptime("3210-09-08T05:06:05.432", p.ISO_FMT)
 VALID_FUTURE_DT_UTC_FROM_UTC = dti.datetime.strptime(VALID_FUTURE_ISO, p.ISO_FMT)
 
 
@@ -81,9 +80,7 @@ def test_parse_dsl_entry_nok_start_data_wrong():
 
 
 def test_parse_dsl_entry_nok_only_kv_seps():
-    text_entry = (
-        '"tag@42[=,=,=,=,==,===,=,' + p.FINAL_DSL_KEY + "=" + "do_not_care" + ']"'
-    )
+    text_entry = '"tag@42[=,=,=,=,==,===,=,' + p.FINAL_DSL_KEY + "=" + "do_not_care" + ']"'
     assert p.parse_dsl_entry(text_entry) == {"final": "do_not_care"}
 
 
@@ -134,15 +131,7 @@ def test_parse_dsl_entry_ok_final_data():
 
 
 def test_parse_dsl_entry_ok_date():
-    text_entry = (
-        '"tag@42[daTE='
-        + VALID_FUTURE_ISO_CEST_COLON
-        + ","
-        + p.FINAL_DSL_KEY
-        + "="
-        + p.JR_NULL
-        + ']"'
-    )
+    text_entry = '"tag@42[daTE=' + VALID_FUTURE_ISO_CEST_COLON + "," + p.FINAL_DSL_KEY + "=" + p.JR_NULL + ']"'
     assert p.parse_dsl_entry(text_entry) == {
         "daTE": VALID_FUTURE_DT_UTC_FROM_CEST,
         p.FINAL_DSL_KEY: p.NA,
@@ -150,27 +139,13 @@ def test_parse_dsl_entry_ok_date():
 
 
 def test_parse_dsl_entry_nok_date_value_invalid():
-    text_entry = (
-        '"tag@42[daTE=9999'
-        + VALID_FUTURE_ISO_CEST_COLON
-        + ","
-        + p.FINAL_DSL_KEY
-        + "="
-        + p.JR_NULL
-        + ']"'
-    )
+    text_entry = '"tag@42[daTE=9999' + VALID_FUTURE_ISO_CEST_COLON + "," + p.FINAL_DSL_KEY + "=" + p.JR_NULL + ']"'
     with pytest.raises(ValueError, match=r"time data '9999.*"):
         assert p.parse_dsl_entry(text_entry)
 
 
 def test_parse_dsl_entry_ok_id_sequence():
-    text_entry = (
-        '"tag@42[iD=42,myID=-1,someSequence=0,'
-        + p.FINAL_DSL_KEY
-        + "="
-        + p.JR_NULL
-        + ']"'
-    )
+    text_entry = '"tag@42[iD=42,myID=-1,someSequence=0,' + p.FINAL_DSL_KEY + "=" + p.JR_NULL + ']"'
     assert p.parse_dsl_entry(text_entry) == {
         "iD": 42,
         "myID": -1,
