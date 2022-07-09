@@ -7,7 +7,7 @@ import pytest  # type: ignore
 
 import nineties.nineties as n
 
-FOLDER_PATH = os.path.join('tests', 'data')
+FOLDER_PATH = os.path.join('test', 'data')
 ELEMENTS_IN_FOLDER_PATH = [
     '23450123T123456_empty.xz',
     '23450123T133456_foo.xz',
