@@ -1,13 +1,14 @@
 # nineties
 
+Ease the reading of relics from the Nineties.
+
 [![license](https://img.shields.io/github/license/sthagen/nineties?style=flat)](https://github.com/sthagen/nineties/blob/default/LICENSE)
+
 [![version](https://img.shields.io/pypi/v/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![downloads](https://img.shields.io/pypi/dm/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![wheel](https://img.shields.io/pypi/wheel/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![supported-versions](https://img.shields.io/pypi/pyversions/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![supported-implementations](https://img.shields.io/pypi/implementation/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
-
-Ease the reading of relics from the Nineties.
 
 ## Status
 
