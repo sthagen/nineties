@@ -12,9 +12,9 @@ Ease the reading of relics from the Nineties.
 
 ## Bug Tracker
 
-Feature requests and bug reports are bested entered in the [todos of sammen](https://todo.sr.ht/~sthagen/sammen).
+Feature requests and bug reports are bested entered in the [todos of nineties](https://todo.sr.ht/~sthagen/nineties).
 
 ## Primary Source repository
 
-The primary source repository of [sammen is at sourcehut](https://git.sr.ht/~sthagen/sammen)
+The primary source repository of [nineties is at sourcehut](https://git.sr.ht/~sthagen/nineties)
 a collection of tools useful for software development.
