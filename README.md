@@ -1,8 +1,8 @@
-# nineties
+# Nineties
 
 Ease the reading of relics from the Nineties.
 
-[![license](https://img.shields.io/github/license/sthagen/nineties?style=flat)](https://github.com/sthagen/nineties/blob/default/LICENSE)
+[License: MIT](https://git.sr.ht/~sthagen/nineties/tree/default/item/LICENSE)
 
 [![version](https://img.shields.io/pypi/v/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![downloads](https://img.shields.io/pypi/dm/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
@@ -10,29 +10,31 @@ Ease the reading of relics from the Nineties.
 [![supported-versions](https://img.shields.io/pypi/pyversions/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![supported-implementations](https://img.shields.io/pypi/implementation/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 
-## Status
+## Documentation
 
-Experimental
+User and developer [documentation of sammen](https://codes.dilettant.life/docs/sammen).
 
-## What is in it
+## Bug Tracker
+
+Feature requests and bug reports are bested entered in the [todos of sammen](https://todo.sr.ht/~sthagen/sammen).
+
+## Primary Source repository
+
+The primary source repository of [sammen is at sourcehut](https://git.sr.ht/~sthagen/sammen)
+a collection of tools useful for software development.
+
+## Random Notes
+### What is in
 
 A small, maybe growing collection of parsers and filters
 to ease dealing with specific information structures that
 drop off of REST backends ;-)
 
-## What is not yet in it
+### What is out (for now)
 
-just sayin':
-* proxy tools like digitally signed high water mark
-* storage via lzma compression
-* GDPR conforming mappings
-* GDPR conforming caching
-* work log analysis
-* process mining support
-* flattening of deeply nested records
-* refactoring the elderly pypi / packaging boilerplate
-* explore github actions vs. travis et al.
-* make user defined fields accessible per configuration
-* provide time tracking views from work log entries
+Everything else (for now)
+## Status
+
+Experimental
 
 **Note**: The default branch is `default`.
