@@ -16,7 +16,7 @@ User and developer [documentation of nineties](https://codes.dilettant.life/docs
 
 ## Bug Tracker
 
-Feature requests and bug reports are bested entered in the [todos of nineties](https://todo.sr.ht/~sthagen/nineties).
+Feature requests and bug reports are best entered in the [todos of nineties](https://todo.sr.ht/~sthagen/nineties).
 
 ## Primary Source repository
 
