@@ -4,6 +4,8 @@ Ease the reading of relics from the Nineties.
 
 [License: MIT](https://git.sr.ht/~sthagen/nineties/tree/default/item/LICENSE)
 
+Third party dependencies are documented in the folder [third-party](third-party/README.md).
+
 [![version](https://img.shields.io/pypi/v/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![downloads](https://pepy.tech/badge/nineties/month)](https://pepy.tech/project/nineties)
 [![wheel](https://img.shields.io/pypi/wheel/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
