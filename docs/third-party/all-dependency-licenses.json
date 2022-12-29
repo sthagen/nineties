@@ -1,0 +1,38 @@
+[
+  {
+    "Author": "joke2k",
+    "Description": "Faker is a Python package that generates fake data for you.",
+    "License": "MIT License",
+    "LicenseFile": "/Users/ruth/.pyenv/versions/3.10.9/envs/nineties-3-10-9/lib/python3.10/site-packages/Faker-15.3.4.dist-info/LICENSE.txt",
+    "LicenseText": "Copyright (c) 2012 Daniele Faraglia\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n",
+    "Name": "Faker",
+    "NoticeFile": "UNKNOWN",
+    "NoticeText": "UNKNOWN",
+    "URL": "https://github.com/joke2k/faker",
+    "Version": "15.3.4"
+  },
+  {
+    "Author": "Gustavo Niemeyer",
+    "Description": "Extensions to the standard Python datetime module",
+    "License": "Apache Software License; BSD License",
+    "LicenseFile": "/Users/ruth/.pyenv/versions/3.10.9/envs/nineties-3-10-9/lib/python3.10/site-packages/python_dateutil-2.8.2.dist-info/LICENSE",
+    "LicenseText": "Copyright 2017- Paul Ganssle <paul@ganssle.io>\nCopyright 2017- dateutil contributors (see AUTHORS file)\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n\nThe above license applies to all contributions after 2017-12-01, as well as\nall contributions that have been re-licensed (see AUTHORS file for the list of\ncontributors who have re-licensed their code).\n--------------------------------------------------------------------------------\ndateutil - Extensions to the standard Python datetime module.\n\nCopyright (c) 2003-2011 - Gustavo Niemeyer <gustavo@niemeyer.net>\nCopyright (c) 2012-2014 - Tomi Pievil\u00e4inen <tomi.pievilainen@iki.fi>\nCopyright (c) 2014-2016 - Yaron de Leeuw <me@jarondl.net>\nCopyright (c) 2015-     - Paul Ganssle <paul@ganssle.io>\nCopyright (c) 2015-     - dateutil contributors (see AUTHORS file)\n\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n    * Redistributions of source code must retain the above copyright notice,\n      this list of conditions and the following disclaimer.\n    * Redistributions in binary form must reproduce the above copyright notice,\n      this list of conditions and the following disclaimer in the documentation\n      and/or other materials provided with the distribution.\n    * Neither the name of the copyright holder nor the names of its\n      contributors may be used to endorse or promote products derived from\n      this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\nLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\nA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR\nCONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\nEXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,\nPROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR\nPROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\nLIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\nThe above BSD License Applies to all code, even that also covered by Apache 2.0.",
+    "Name": "python-dateutil",
+    "NoticeFile": "UNKNOWN",
+    "NoticeText": "UNKNOWN",
+    "URL": "https://github.com/dateutil/dateutil",
+    "Version": "2.8.2"
+  },
+  {
+    "Author": "Benjamin Peterson",
+    "Description": "Python 2 and 3 compatibility utilities",
+    "License": "MIT License",
+    "LicenseFile": "/Users/ruth/.pyenv/versions/3.10.9/envs/nineties-3-10-9/lib/python3.10/site-packages/six-1.16.0.dist-info/LICENSE",
+    "LicenseText": "Copyright (c) 2010-2020 Benjamin Peterson\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+    "Name": "six",
+    "NoticeFile": "UNKNOWN",
+    "NoticeText": "UNKNOWN",
+    "URL": "https://github.com/benjaminp/six",
+    "Version": "1.16.0"
+  }
+]
