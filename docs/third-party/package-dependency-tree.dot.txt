@@ -1,7 +1,7 @@
 digraph {
-	faker [label="Faker\n15.3.4"]
-	faker -> "python-dateutil" [label=">=2.4"]
-	"python-dateutil" [label="python-dateutil\n2.8.2"]
 	"python-dateutil" -> six [label=">=1.5"]
+	"python-dateutil" [label="python-dateutil\n2.8.2"]
+	faker -> "python-dateutil" [label=">=2.4"]
+	faker [label="Faker\n18.11.1"]
 	six [label="six\n1.16.0"]
 }

@@ -1,0 +1,41 @@
+SPDXVersion: SPDX-2.3
+DataLicense: CC0-1.0
+DocumentNamespace: https://cyclonedx/f47a5cf2-1673-44b6-ad15-5912a12ff365_1
+DocumentName: SBOM-for-Faker
+SPDXID: SPDXRef-DOCUMENT
+
+## Creation Information
+Creator: Tool: CycloneDX:cyclonedx-bom-3.11.0
+Creator: Tool: CycloneDX:cyclonedx-python-lib-3.1.1
+Creator: Tool: CycloneToSpdx-0.1.4
+Created: 2023-06-24T20:38:28Z
+CreatorComment: <text>Converted from CycloneDX spec version 1.4</text>
+LicenseListVersion: 3.21
+## Annotations
+Annotator: Tool: CycloneToSpdx
+AnnotationDate: 2023-06-24T20:38:30Z
+AnnotationComment: <text>MISSING_CDX_PROPERTY:extensions={}</text>
+AnnotationType: OTHER
+SPDXREF: SPDXRef-DOCUMENT
+## Relationships
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-1ddf4bf9-b6fb-4179-909e-a0b4a2e7ad8a
+
+## Package Information
+PackageName: Faker
+SPDXID: SPDXRef-1ddf4bf9-b6fb-4179-909e-a0b4a2e7ad8a
+PackageVersion: 18.11.1
+PackageDownloadLocation: NOASSERTION
+PrimaryPackagePurpose: LIBRARY
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/faker@18.11.1
+## Annotations
+Annotator: Tool: CycloneToSpdx
+AnnotationDate: 2023-06-24T20:38:30Z
+AnnotationComment: <text>MISSING_CDX_PROPERTY:componentType="LIBRARY"</text>
+AnnotationType: OTHER
+SPDXREF: SPDXRef-1ddf4bf9-b6fb-4179-909e-a0b4a2e7ad8a
+FilesAnalyzed: false
+
+
