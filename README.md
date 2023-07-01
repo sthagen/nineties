@@ -11,6 +11,7 @@ Third party dependencies are documented in the folder [third-party](docs/third-p
 [![wheel](https://img.shields.io/pypi/wheel/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![supported-versions](https://img.shields.io/pypi/pyversions/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![supported-implementations](https://img.shields.io/pypi/implementation/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
+[![maintenance-status](https://img.shields.io/github/commit-activity/y/sthagen/nineties.svg?style=flat)](https://git.sr.ht/~sthagen/nineties/log)
 
 ## Documentation
 
