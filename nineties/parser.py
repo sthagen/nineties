@@ -39,10 +39,10 @@ def parse_timestamp(text_stamp):
         return local_time
 
     sign_pos = 0
-    assert off and off[sign_pos] in TZ_OP
+    assert off and off[sign_pos] in TZ_OP  # nosec B101
 
     m_start = 3 if ':' not in off else 4
-    assert len(off) == m_start + 2
+    assert len(off) == m_start + 2  # nosec B101
 
     oper, hours, minutes = off[sign_pos], int(off[1:3]), int(off[m_start:])
 
