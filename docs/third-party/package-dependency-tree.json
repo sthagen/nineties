@@ -2,8 +2,8 @@
     {
         "key": "faker",
         "package_name": "Faker",
-        "installed_version": "19.2.0",
-        "required_version": "19.2.0",
+        "installed_version": "19.3.0",
+        "required_version": "19.3.0",
         "dependencies": [
             {
                 "key": "python-dateutil",
