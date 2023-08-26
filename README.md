@@ -7,7 +7,7 @@ Ease the reading of relics from the Nineties.
 Third party dependencies are documented in the folder [third-party](docs/third-party/README.md).
 
 [![version](https://img.shields.io/pypi/v/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
-[![downloads](https://pepy.tech/badge/nineties/month)](https://pepy.tech/project/nineties)
+[![downloads](https://static.pepy.tech/badge/nineties/month)](https://pepy.tech/project/nineties)
 [![wheel](https://img.shields.io/pypi/wheel/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![supported-versions](https://img.shields.io/pypi/pyversions/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![supported-implementations](https://img.shields.io/pypi/implementation/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
