@@ -13,7 +13,7 @@
 <title>faker</title>
 <ellipse fill="none" stroke="black" cx="69.65" cy="-229.55" rx="35.71" ry="25.81"/>
 <text text-anchor="middle" x="69.65" y="-230.5" font-family="Times,serif" font-size="14.00">Faker</text>
-<text text-anchor="middle" x="69.65" y="-216.25" font-family="Times,serif" font-size="14.00">19.4.0</text>
+<text text-anchor="middle" x="69.65" y="-216.25" font-family="Times,serif" font-size="14.00">19.6.0</text>
 </g>
 <!-- python&#45;dateutil -->
 <g id="node2" class="node">
