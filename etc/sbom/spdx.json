@@ -3,23 +3,23 @@
   "spdxVersion" : "SPDX-2.3",
   "creationInfo" : {
     "comment" : "Converted from CycloneDX spec version 1.4",
-    "created" : "2023-09-09T10:26:33Z",
+    "created" : "2023-09-11T17:08:39Z",
     "creators" : [ "Tool: CycloneDX:cyclonedx-bom-3.11.2", "Tool: CycloneDX:cyclonedx-python-lib-3.1.5", "Tool: CycloneToSpdx-0.1.4" ],
     "licenseListVersion" : "3.21"
   },
   "name" : "SBOM-for-Faker",
   "dataLicense" : "CC0-1.0",
   "annotations" : [ {
-    "annotationDate" : "2023-09-09T10:26:34Z",
+    "annotationDate" : "2023-09-11T17:08:40Z",
     "annotationType" : "OTHER",
     "annotator" : "Tool: CycloneToSpdx",
     "comment" : "MISSING_CDX_PROPERTY:extensions={}"
   } ],
-  "documentNamespace" : "https://cyclonedx/2d74e447-0a2f-4080-af7d-742fd6ae4de6_1",
+  "documentNamespace" : "https://cyclonedx/40094201-41f6-4ad5-a216-7e1dba5b0846_1",
   "packages" : [ {
-    "SPDXID" : "SPDXRef-5179b329-1fa7-4b6f-97ea-f7f1f246357e",
+    "SPDXID" : "SPDXRef-8c8c49c5-524e-4a8b-916a-6fc6ea4862b0",
     "annotations" : [ {
-      "annotationDate" : "2023-09-09T10:26:34Z",
+      "annotationDate" : "2023-09-11T17:08:40Z",
       "annotationType" : "OTHER",
       "annotator" : "Tool: CycloneToSpdx",
       "comment" : "MISSING_CDX_PROPERTY:componentType=\"LIBRARY\""
@@ -28,7 +28,7 @@
     "downloadLocation" : "NOASSERTION",
     "externalRefs" : [ {
       "referenceCategory" : "PACKAGE-MANAGER",
-      "referenceLocator" : "pkg:pypi/faker@19.6.0",
+      "referenceLocator" : "pkg:pypi/faker@19.6.1",
       "referenceType" : "purl"
     } ],
     "filesAnalyzed" : false,
@@ -36,11 +36,11 @@
     "licenseDeclared" : "NOASSERTION",
     "name" : "Faker",
     "primaryPackagePurpose" : "LIBRARY",
-    "versionInfo" : "19.6.0"
+    "versionInfo" : "19.6.1"
   } ],
   "relationships" : [ {
     "spdxElementId" : "SPDXRef-DOCUMENT",
     "relationshipType" : "DESCRIBES",
-    "relatedSpdxElement" : "SPDXRef-5179b329-1fa7-4b6f-97ea-f7f1f246357e"
+    "relatedSpdxElement" : "SPDXRef-8c8c49c5-524e-4a8b-916a-6fc6ea4862b0"
   } ]
 }
