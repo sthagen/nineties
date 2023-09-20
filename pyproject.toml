@@ -20,7 +20,7 @@ classifiers = [
 ]
 keywords = ["developer-tools", "validation", "verification"]
 dependencies = [
-    "Faker >= 19.6.1",
+    "Faker >= 19.6.2",
 ]
 requires-python = ">=3.9"
 
