@@ -3,23 +3,23 @@
   "spdxVersion" : "SPDX-2.3",
   "creationInfo" : {
     "comment" : "Converted from CycloneDX spec version 1.4",
-    "created" : "2023-10-07T08:24:02Z",
+    "created" : "2023-10-09T16:20:37Z",
     "creators" : [ "Tool: CycloneDX:cyclonedx-bom-3.11.2", "Tool: CycloneDX:cyclonedx-python-lib-3.1.5", "Tool: CycloneToSpdx-0.1.4" ],
     "licenseListVersion" : "3.22"
   },
   "name" : "SBOM-for-Faker",
   "dataLicense" : "CC0-1.0",
   "annotations" : [ {
-    "annotationDate" : "2023-10-07T08:24:04Z",
+    "annotationDate" : "2023-10-09T16:20:38Z",
     "annotationType" : "OTHER",
     "annotator" : "Tool: CycloneToSpdx",
     "comment" : "MISSING_CDX_PROPERTY:extensions={}"
   } ],
-  "documentNamespace" : "https://cyclonedx/f24d0bc1-8aee-4699-a736-cc70a530b37c_1",
+  "documentNamespace" : "https://cyclonedx/0b304313-1d0e-4036-9372-381deaa49b74_1",
   "packages" : [ {
-    "SPDXID" : "SPDXRef-8d347097-56bd-4252-9d1a-b5b1319f1944",
+    "SPDXID" : "SPDXRef-a997f80c-71ad-4860-8777-15b81474a30e",
     "annotations" : [ {
-      "annotationDate" : "2023-10-07T08:24:04Z",
+      "annotationDate" : "2023-10-09T16:20:38Z",
       "annotationType" : "OTHER",
       "annotator" : "Tool: CycloneToSpdx",
       "comment" : "MISSING_CDX_PROPERTY:componentType=\"LIBRARY\""
@@ -28,7 +28,7 @@
     "downloadLocation" : "NOASSERTION",
     "externalRefs" : [ {
       "referenceCategory" : "PACKAGE-MANAGER",
-      "referenceLocator" : "pkg:pypi/faker@19.6.2",
+      "referenceLocator" : "pkg:pypi/faker@19.8.0",
       "referenceType" : "purl"
     } ],
     "filesAnalyzed" : false,
@@ -36,11 +36,11 @@
     "licenseDeclared" : "NOASSERTION",
     "name" : "Faker",
     "primaryPackagePurpose" : "LIBRARY",
-    "versionInfo" : "19.6.2"
+    "versionInfo" : "19.8.0"
   } ],
   "relationships" : [ {
     "spdxElementId" : "SPDXRef-DOCUMENT",
     "relationshipType" : "DESCRIBES",
-    "relatedSpdxElement" : "SPDXRef-8d347097-56bd-4252-9d1a-b5b1319f1944"
+    "relatedSpdxElement" : "SPDXRef-a997f80c-71ad-4860-8777-15b81474a30e"
   } ]
 }

@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.4.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
-  "serialNumber": "urn:uuid:f24d0bc1-8aee-4699-a736-cc70a530b37c",
+  "serialNumber": "urn:uuid:0b304313-1d0e-4036-9372-381deaa49b74",
   "version": 1,
   "metadata": {
-    "timestamp": "2023-10-07T08:24:02.646451+00:00",
+    "timestamp": "2023-10-09T16:20:37.392731+00:00",
     "tools": [
       {
         "vendor": "CycloneDX",
@@ -56,15 +56,15 @@
   "components": [
     {
       "type": "library",
-      "bom-ref": "8d347097-56bd-4252-9d1a-b5b1319f1944",
+      "bom-ref": "a997f80c-71ad-4860-8777-15b81474a30e",
       "name": "Faker",
-      "version": "19.6.2",
-      "purl": "pkg:pypi/faker@19.6.2"
+      "version": "19.8.0",
+      "purl": "pkg:pypi/faker@19.8.0"
     }
   ],
   "dependencies": [
     {
-      "ref": "8d347097-56bd-4252-9d1a-b5b1319f1944",
+      "ref": "a997f80c-71ad-4860-8777-15b81474a30e",
       "dependsOn": []
     }
   ]
