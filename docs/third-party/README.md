@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/nineties/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([97b59c21 ...](https://git.sr.ht/~sthagen/nineties/blob/default/etc/sbom/cdx.json.sha256 "sha256:97b59c21abf698a61d5edcec280156de530043695709d01c25b570faaa755f75")).
-<!--[[[end]]] (checksum: 76256645d64c0485e48334fb0db5bb22)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/nineties/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([9f9ebba8 ...](https://git.sr.ht/~sthagen/nineties/blob/default/etc/sbom/cdx.json.sha256 "sha256:9f9ebba8d58cfec5b7735b5ba1b5e3676512cb1cb53e2b5b1c0f629594ac2854")).
+<!--[[[end]]] (checksum: d50819c108b188531bb82d4fcc51ecd8)-->
 ## Licenses 
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -10,10 +10,10 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 ### Direct Dependencies
 
 <!--[[[fill direct_dependencies_table()]]]-->
-| Name                                     | Version                                          | License     | Author | Description (from packaging data)                           |
-|:-----------------------------------------|:-------------------------------------------------|:------------|:-------|:------------------------------------------------------------|
-| [Faker](https://github.com/joke2k/faker) | [19.9.0](https://pypi.org/project/Faker/19.9.0/) | MIT License | joke2k | Faker is a Python package that generates fake data for you. |
-<!--[[[end]]] (checksum: d8b1a00c8de59fb36152d0d5d3353d2f)-->
+| Name                                     | Version                                            | License     | Author | Description (from packaging data)                           |
+|:-----------------------------------------|:---------------------------------------------------|:------------|:-------|:------------------------------------------------------------|
+| [Faker](https://github.com/joke2k/faker) | [19.10.0](https://pypi.org/project/Faker/19.10.0/) | MIT License | joke2k | Faker is a Python package that generates fake data for you. |
+<!--[[[end]]] (checksum: 285c06545fa930cfc2a9302058f573e5)-->
 
 ### Indirect Dependencies
 
@@ -38,8 +38,8 @@ Base graphviz file in dot format: [Trees of the direct dependencies](package-dep
 
 <!--[[[fill dependency_tree_console_text()]]]-->
 ````console
-Faker==19.9.0
+Faker==19.10.0
 └── python-dateutil [required: >=2.4, installed: 2.8.2]
     └── six [required: >=1.5, installed: 1.16.0]
 ````
-<!--[[[end]]] (checksum: 901439cc4d119f2a014f147478dd9c04)-->
+<!--[[[end]]] (checksum: 9adf44dee99023fdb29a0fd2b10da09a)-->

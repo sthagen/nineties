@@ -11,9 +11,9 @@
 <!-- faker -->
 <g id="node1" class="node">
 <title>faker</title>
-<ellipse fill="none" stroke="black" cx="69.65" cy="-249.96" rx="35.71" ry="28.99"/>
+<ellipse fill="none" stroke="black" cx="69.65" cy="-249.96" rx="40.48" ry="28.99"/>
 <text text-anchor="middle" x="69.65" y="-253.16" font-family="Times,serif" font-size="14.00">Faker</text>
-<text text-anchor="middle" x="69.65" y="-236.66" font-family="Times,serif" font-size="14.00">19.9.0</text>
+<text text-anchor="middle" x="69.65" y="-236.66" font-family="Times,serif" font-size="14.00">19.10.0</text>
 </g>
 <!-- python&#45;dateutil -->
 <g id="node2" class="node">
