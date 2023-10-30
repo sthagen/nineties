@@ -10,7 +10,7 @@ Ease the reading of relics from the Nineties.
 [![Version](https://img.shields.io/pypi/v/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![Downloads](https://static.pepy.tech/badge/nineties/month)](https://pepy.tech/project/nineties)
 [![Supported Versions](https://img.shields.io/pypi/pyversions/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
-[![Maintenance Status](docs/badges/downloads-per-month.svg)](https://git.sr.ht/~sthagen/nineties/log)
+[![Maintenance Status](docs/badges/commits-per-year.svg)](https://git.sr.ht/~sthagen/nineties/log)
 
 ## Bug Tracker
 
