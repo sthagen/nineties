@@ -8,7 +8,7 @@ Ease the reading of relics from the Nineties.
 [![Configuration](docs/badges/configuration-sbom.svg)](https://git.sr.ht/~sthagen/nineties/tree/default/item/docs/third-party/README.md)
 
 [![Version](https://img.shields.io/pypi/v/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
-[![Downloads](https://static.pepy.tech/badge/nineties/month)](https://pepy.tech/project/nineties)
+[![Downloads](docs/badges/downloads-per-month.svg)](https://pepy.tech/project/nineties)
 [![Supported Versions](https://img.shields.io/pypi/pyversions/nineties.svg?style=flat)](https://pypi.python.org/pypi/nineties/)
 [![Maintenance Status](docs/badges/commits-per-year.svg)](https://git.sr.ht/~sthagen/nineties/log)
 
