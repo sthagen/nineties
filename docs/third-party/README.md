@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/nineties/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([81208398 ...](https://git.sr.ht/~sthagen/nineties/blob/default/etc/sbom/cdx.json.sha256 "sha256:812083980967b79de45adf1849ce0c589f258d15afb0b7af204c9e102eb6db75")).
-<!--[[[end]]] (checksum: c6227dcc2c5e8244d661b72c8a5e220b)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/nineties/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([c9b280ee ...](https://git.sr.ht/~sthagen/nineties/blob/default/etc/sbom/cdx.json.sha256 "sha256:c9b280eee6305e9899d31d6a596f8f28ebafdf77dabd21ccda5a152b996a9985")).
+<!--[[[end]]] (checksum: 51c95454249a6d4e18beb2aa88d80a56)-->
 ## Licenses 
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -12,8 +12,8 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 <!--[[[fill direct_dependencies_table()]]]-->
 | Name                                     | Version                                            | License     | Author | Description (from packaging data)                           |
 |:-----------------------------------------|:---------------------------------------------------|:------------|:-------|:------------------------------------------------------------|
-| [Faker](https://github.com/joke2k/faker) | [19.12.1](https://pypi.org/project/Faker/19.12.1/) | MIT License | joke2k | Faker is a Python package that generates fake data for you. |
-<!--[[[end]]] (checksum: b5caba3ca075302e9b96d23714ab2003)-->
+| [Faker](https://github.com/joke2k/faker) | [19.13.0](https://pypi.org/project/Faker/19.13.0/) | MIT License | joke2k | Faker is a Python package that generates fake data for you. |
+<!--[[[end]]] (checksum: 1ac7270df248eda198d75304b7ec8883)-->
 
 ### Indirect Dependencies
 
@@ -38,8 +38,8 @@ Base graphviz file in dot format: [Trees of the direct dependencies](package-dep
 
 <!--[[[fill dependency_tree_console_text()]]]-->
 ````console
-Faker==19.12.1
+Faker==19.13.0
 └── python-dateutil [required: >=2.4, installed: 2.8.2]
     └── six [required: >=1.5, installed: 1.16.0]
 ````
-<!--[[[end]]] (checksum: ceb614580291408ed0729d7fe25777c5)-->
+<!--[[[end]]] (checksum: 61ed3f6ace09addb984f31151feed0e6)-->
