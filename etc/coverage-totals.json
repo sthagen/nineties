@@ -1,7 +1,7 @@
 {
   "nineties": {
-    "version": "7.3.2",
-    "timestamp": "2023-12-02T15:28:07.431947",
+    "coverage_tool_version": "7.3.2",
+    "timestamp": "2023-12-02 16:26:19 +00:00",
     "branch_coverage": true,
     "show_contexts": true,
     "covered_lines": 213,
@@ -13,6 +13,25 @@
     "num_branches": 101,
     "num_partial_branches": 2,
     "covered_branches": 99,
-    "missing_branches": 2
+    "missing_branches": 2,
+    "node_id": "c79891e5-aabf-3a83-95b9-588edcd8327f",
+    "nfiles": 6,
+    "files": [
+      "nineties/__init__.py",
+      "nineties/__main__.py",
+      "nineties/cli.py",
+      "nineties/nineties.py",
+      "nineties/parser.py",
+      "nineties/privacy.py"
+    ],
+    "blake3": "310ff70afbf28ce865384df5658b5eb761187a229a8528f76ef3a289cdc543e0",
+    "blake2": "3dbdce29422acc35c9b05fd3edfd4595aada25b53ac7c4c4606e954d7b8a3e666e413b5db99b3c196562684bbe6fa68e135d1de9b34ea1bbf8b09b8c3b08fa63",
+    "sha512": "de64d7a09710dc803d43b674c2fea6ff401ddd7fa826f416e370090c192cf3fcbeb200637886d954f880ca492543a389db6593525bfc47a5da6fc35bcff22b81",
+    "sha384": "9275a52f553361710fb57d7d6d06d3e71e346dae26cba9614f31f6f6d54a1ed6af15aa00917bee2b0f37bb74f898f3de",
+    "sha256": "7354ed812d778974424890c26eb0afbc21e8fbf388fe3c799cc5360611320308",
+    "sha1": "7762dd95c1701d0d5e400996e6c91bcc8a1a9786",
+    "md5": "ee1fc26df26fa1ee58252bb45a942ec6",
+    "python_version": "3.10.12",
+    "entropy": 4.990625
   }
 }
