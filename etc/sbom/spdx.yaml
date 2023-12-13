@@ -3,7 +3,7 @@ SPDXID: "SPDXRef-DOCUMENT"
 spdxVersion: "SPDX-2.3"
 creationInfo:
   comment: "Converted from CycloneDX spec version 1.4"
-  created: "2023-11-20T20:27:25Z"
+  created: "2023-12-13T20:34:25Z"
   creators:
   - "Tool: CycloneDX:cyclonedx-bom-3.11.7"
   - "Tool: CycloneDX:cyclonedx-python-lib-3.1.5"
@@ -12,15 +12,15 @@ creationInfo:
 name: "SBOM-for-Faker"
 dataLicense: "CC0-1.0"
 annotations:
-- annotationDate: "2023-11-20T20:27:31Z"
+- annotationDate: "2023-12-13T20:34:30Z"
   annotationType: "OTHER"
   annotator: "Tool: CycloneToSpdx"
   comment: "MISSING_CDX_PROPERTY:extensions={}"
-documentNamespace: "https://cyclonedx/362b439d-d943-4cc9-ba14-1452ed30acfd_1"
+documentNamespace: "https://cyclonedx/4dd5892f-807b-4b75-a9f7-9cd9a30c73a2_1"
 packages:
-- SPDXID: "SPDXRef-bb6ad956-9e9a-4076-b47c-a521278d5c1e"
+- SPDXID: "SPDXRef-d341df7a-b502-47a7-8566-32b0a4473f89"
   annotations:
-  - annotationDate: "2023-11-20T20:27:31Z"
+  - annotationDate: "2023-12-13T20:34:30Z"
     annotationType: "OTHER"
     annotator: "Tool: CycloneToSpdx"
     comment: "MISSING_CDX_PROPERTY:componentType=\"LIBRARY\""
@@ -28,15 +28,15 @@ packages:
   downloadLocation: "NOASSERTION"
   externalRefs:
   - referenceCategory: "PACKAGE-MANAGER"
-    referenceLocator: "pkg:pypi/faker@20.1.0"
+    referenceLocator: "pkg:pypi/faker@21.0.0"
     referenceType: "purl"
   filesAnalyzed: false
   licenseConcluded: "NOASSERTION"
   licenseDeclared: "NOASSERTION"
   name: "Faker"
   primaryPackagePurpose: "LIBRARY"
-  versionInfo: "20.1.0"
+  versionInfo: "21.0.0"
 relationships:
 - spdxElementId: "SPDXRef-DOCUMENT"
   relationshipType: "DESCRIBES"
-  relatedSpdxElement: "SPDXRef-bb6ad956-9e9a-4076-b47c-a521278d5c1e"
+  relatedSpdxElement: "SPDXRef-d341df7a-b502-47a7-8566-32b0a4473f89"
